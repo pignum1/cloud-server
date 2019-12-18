@@ -1,0 +1,21 @@
+#配置服务注册中心 eureka
+eureka:
+    client:
+        fetch-registry: false
+        healthcheck:
+            enabled: true
+        register-with-eureka: false #注册中心不注册自己
+        service-url:
+            defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    instance:
+        hostname: localhost #注册中心名称
+    server:
+        enable-self-preservation: false
+        eviction-interval-timer-in-ms: 5000
+server:
+    port: 5678 #服务端口号
+spring:
+    security:
+        user:
+            name: wxy # 登录设置 添加账号、密码
+            password: wxy123
